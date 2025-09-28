@@ -1,4 +1,8 @@
-import { GAME_CONFIG } from './constants';
+import { GAME_CONFIG } from './constants.js';
+
+/**
+ * @typedef {import('../types/jsdoc.js').ValidationResult} ValidationResult
+ */
 
 /**
  * Validates a game invite code
@@ -24,7 +28,7 @@ export const validateGameCode = code => {
 /**
  * Validates a player name
  * @param {string} name - The player name to validate
- * @returns {object} - { isValid: boolean, error?: string }
+ * @returns {ValidationResult} - { isValid: boolean, error?: string }
  */
 export const validatePlayerName = name => {
   if (!name || typeof name !== 'string') {
@@ -53,7 +57,7 @@ export const validatePlayerName = name => {
 /**
  * Validates topic selection
  * @param {string[]} topics - Array of selected topics
- * @returns {object} - { isValid: boolean, error?: string }
+ * @returns {ValidationResult} - { isValid: boolean, error?: string }
  */
 export const validateTopicSelection = topics => {
   if (!Array.isArray(topics)) {
